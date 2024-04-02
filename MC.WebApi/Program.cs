@@ -1,3 +1,11 @@
+using MC.Data.Context;
+using MC.Data.Repository;
+using MC.Manager.Interfaces;
+using MC.Manager.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +14,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<MCContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase")));
+
+builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
+builder.Services.AddScoped<IMotorcycleService, MotorcycleService>();
 
 var app = builder.Build();
 
