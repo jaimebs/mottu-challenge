@@ -1,6 +1,6 @@
 ﻿using MC.Core.Domain;
 using MC.Data.Context;
-using MC.Manager.Interfaces;
+using MC.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace MC.Data.Repository

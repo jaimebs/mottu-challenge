@@ -1,6 +1,6 @@
 ﻿using MC.Core.Domain;
 
-namespace MC.Manager.Interfaces
+namespace MC.Data.Interfaces
 {
     public interface IMotorcycleRepository
     {

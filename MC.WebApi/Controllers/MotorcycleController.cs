@@ -1,7 +1,6 @@
 ﻿using MC.Core.Domain;
 using MC.Manager.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 
 namespace MC.WebApi.Controllers
 {

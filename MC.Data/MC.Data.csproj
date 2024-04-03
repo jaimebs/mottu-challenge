@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MC.Core\MC.Core.csproj" />
-    <ProjectReference Include="..\MC.Manager\MC.Manager.csproj" />
   </ItemGroup>
 
 </Project>

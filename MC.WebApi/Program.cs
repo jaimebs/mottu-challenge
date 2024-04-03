@@ -1,10 +1,9 @@
 using MC.Data.Context;
+using MC.Data.Interfaces;
 using MC.Data.Repository;
 using MC.Manager.Interfaces;
 using MC.Manager.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
