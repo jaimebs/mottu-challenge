@@ -1,16 +1,15 @@
 ﻿using MC.Core.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MC.Manager.Dtos;
 
 namespace MC.Manager.Interfaces
 {
     public interface IMotorcycleService
     {
         Task<List<Motorcycle>> GetAllAsync();
-        Task<Motorcycle> GetByPlaceAsync(string place);
-        Task<Motorcycle> Save(Motorcycle motorcycle);
+        Task<Motorcycle?> GetByIdAsync(int id);
+        Task<Motorcycle?> GetByPlaceAsync(string place);
+        Task<Motorcycle> SaveAsync(InputMotorcycleDto motorcycle);
+        Task<Motorcycle?> UpdatePlaceAsync(int id, string place);
+        Task DeleteAsync(int id);
     }
 }

@@ -2,6 +2,7 @@ using MC.Data.Context;
 using MC.Data.Interfaces;
 using MC.Data.Repository;
 using MC.Manager.Interfaces;
+using MC.Manager.Mappings;
 using MC.Manager.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MCContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase")));
+
+builder.Services.AddAutoMapper(typeof(InputMotorcycleMappingProfile));
 
 builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
 builder.Services.AddScoped<IMotorcycleService, MotorcycleService>();
