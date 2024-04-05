@@ -13,5 +13,6 @@ namespace MC.Data.Context
         public MCContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Motorcycle> Motorcycles { get; set; }
+        public DbSet<DeliveryMan> DeliveryMan { get; set; }
     }
 }
