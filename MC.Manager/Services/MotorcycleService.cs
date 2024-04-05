@@ -27,9 +27,9 @@ namespace MC.Manager.Services
             return await repository.GetByIdAsync(id);
         }
 
-        public async Task<Motorcycle?> GetByPlaceAsync(string place)
+        public async Task<Motorcycle?> GetByPlateAsync(string plate)
         {
-            return await repository.GetByPlaceAsync(place);
+            return await repository.GetByPlateAsync(plate);
         }
 
         public async Task<Motorcycle> SaveAsync(InputMotorcycleDto newMotorcycle)
@@ -39,9 +39,9 @@ namespace MC.Manager.Services
             return await repository.SaveAsync(motorcycle);
         }
 
-        public async Task<Motorcycle?> UpdatePlaceAsync(int id, string place)
+        public async Task<Motorcycle?> UpdatePlateAsync(int id, string plate)
         {
-            return await repository.UpdatePlaceAsync(id, place);
+            return await repository.UpdatePlateAsync(id, plate);
         }
 
         public async Task DeleteAsync(int id)

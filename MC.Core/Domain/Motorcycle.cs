@@ -3,8 +3,8 @@
     public class Motorcycle
     {
         public int Id { get; set; }
-        public string Year { get; set; }
-        public string Model { get; set; }
-        public string Place { get; set; }
+        public string? Year { get; set; }
+        public string? Model { get; set; }
+        public string? Plate { get; set; }
     }
 }

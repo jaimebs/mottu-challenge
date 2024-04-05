@@ -26,9 +26,9 @@ namespace MC.Data.Repository
             return motorcycle;
         }
 
-        public async Task<Motorcycle?> GetByPlaceAsync(string place)
+        public async Task<Motorcycle?> GetByPlateAsync(string plate)
         {
-            var motorcycle = await context.Motorcycles.SingleOrDefaultAsync(c=> c.Place.ToLower() == place.ToLower());
+            var motorcycle = await context.Motorcycles.SingleOrDefaultAsync(c=> c.Plate.ToLower() == plate.ToLower());
 
             return motorcycle;
         }
@@ -41,7 +41,7 @@ namespace MC.Data.Repository
 
         }
 
-        public async Task<Motorcycle?> UpdatePlaceAsync(int id, string place)
+        public async Task<Motorcycle?> UpdatePlateAsync(int id, string plate)
         {
            var data = await context.Motorcycles.FindAsync(id);
 
@@ -49,7 +49,7 @@ namespace MC.Data.Repository
                 return null;
             }
 
-            data.Place = place;
+            data.Plate = plate;
 
             context.Motorcycles.Update(data);
             await context.SaveChangesAsync();

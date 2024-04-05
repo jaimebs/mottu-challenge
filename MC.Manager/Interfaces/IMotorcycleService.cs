@@ -7,9 +7,9 @@ namespace MC.Manager.Interfaces
     {
         Task<List<Motorcycle>> GetAllAsync();
         Task<Motorcycle?> GetByIdAsync(int id);
-        Task<Motorcycle?> GetByPlaceAsync(string place);
+        Task<Motorcycle?> GetByPlateAsync(string plate);
         Task<Motorcycle> SaveAsync(InputMotorcycleDto motorcycle);
-        Task<Motorcycle?> UpdatePlaceAsync(int id, string place);
+        Task<Motorcycle?> UpdatePlateAsync(int id, string plate);
         Task DeleteAsync(int id);
     }
 }

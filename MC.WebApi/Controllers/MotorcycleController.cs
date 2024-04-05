@@ -34,13 +34,13 @@ namespace MC.WebApi.Controllers
             return Ok(motorcycle);
         }
 
-        [HttpGet("place/{place}")]
-        public async Task<IActionResult> GetByPlace(string place)
+        [HttpGet("plate/{plate}")]
+        public async Task<IActionResult> GetByPlate(string plate)
         {
-            var motorcycle = await motorcycleService.GetByPlaceAsync(place);
+            var motorcycle = await motorcycleService.GetByPlateAsync(plate);
 
             if(motorcycle == null) {
-                return BadRequest($"Moto não encontrada para esta placa {place}");
+                return BadRequest($"Moto não encontrada para esta placa {plate}");
             }
             return Ok(motorcycle);
         }
@@ -48,7 +48,7 @@ namespace MC.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(InputMotorcycleDto motorcycle)
         {
-            var IsMotorcycleAlearyExist = await motorcycleService.GetByPlaceAsync(motorcycle.Place);
+            var IsMotorcycleAlearyExist = await motorcycleService.GetByPlateAsync(motorcycle.Plate);
 
             if(IsMotorcycleAlearyExist != null)
             {
@@ -59,10 +59,10 @@ namespace MC.WebApi.Controllers
             return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
         }
 
-        [HttpPut("/{id}")]
-        public async Task<IActionResult> UpdatePlace(int id, string place)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePlate(int id, string place)
         {
-            var motorcycle = await motorcycleService.UpdatePlaceAsync(id, place);
+            var motorcycle = await motorcycleService.UpdatePlateAsync(id, place);
 
             if (motorcycle == null)
             {
@@ -72,7 +72,7 @@ namespace MC.WebApi.Controllers
             return Ok(motorcycle);
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await motorcycleService.DeleteAsync(id);

@@ -14,5 +14,7 @@ namespace MC.Data.Context
 
         public DbSet<Motorcycle> Motorcycles { get; set; }
         public DbSet<DeliveryMan> DeliveryMan { get; set; }
+        public DbSet<RentalPlan> RentalPlans { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
     }
 }
