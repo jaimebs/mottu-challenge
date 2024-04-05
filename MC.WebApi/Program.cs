@@ -17,13 +17,20 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MCContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase")));
 
-builder.Services.AddAutoMapper(typeof(InputMotorcycleMappingProfile), typeof(InputDeliveryManMappingProfile));
+builder.Services.AddAutoMapper(typeof(InputMotorcycleMappingProfile), typeof(InputDeliveryManMappingProfile),
+    typeof(InputRentalPlanMappingProfile), typeof(InputRentalMappingProfile));
 
 builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
 builder.Services.AddScoped<IMotorcycleService, MotorcycleService>();
 
 builder.Services.AddScoped<IDeliveryManRepository, DeliveryManRepository>();
 builder.Services.AddScoped<IDeliveryManService, DeliveryManService>();
+
+builder.Services.AddScoped<IRentalPlanRepository, RentalPlanRepository>();
+builder.Services.AddScoped<IRentalPlanService, RentalPlanService>();
+
+builder.Services.AddScoped<IRentalRepository, RentalRepository>();
+builder.Services.AddScoped<IRentalService, RentalService>();
 
 var app = builder.Build();
 

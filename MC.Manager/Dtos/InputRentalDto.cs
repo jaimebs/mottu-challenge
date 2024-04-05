@@ -1,23 +1,21 @@
-﻿using System;
+﻿using MC.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MC.Core.Domain
+namespace MC.Manager.Dtos
 {
-    public class Rental
+    public class InputRentalDto
     {
-        public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ExpectedReturnDate { get; set; }
         public decimal TotalCost { get; set; }
         public int MotorcycleId { get; set; }
-        public Motorcycle Motorcycle { get; set; }
         public int DeliveryManId { get; set; }
-        public DeliveryMan DeliveryMan { get; set; }
         public int RentalPlanId { get; set; }
-        public RentalPlan RentalPlan { get; set; }
+
     }
 }
